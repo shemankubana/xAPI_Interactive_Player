@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Interactive Video Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Used -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link href="./styles/player/normalize.css" rel="stylesheet">
+    <!-- Video JS -->
+    <link href="./styles/player/videojs.min.css" rel="stylesheet">
+    <link href="./styles/player/videojs.markers.min.css" rel="stylesheet">
+    <!-- Interactive Video CSS -->
+    <link href="./styles/player.css" rel="stylesheet">
+    <link href="./styles/custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="change-user">
+      <svg id="i-user" class="person bs-icon" viewBox="0 0 32 32"><path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z"></path> </svg>
+      <svg class="closer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M39.363,79L16,55.49l11.347-11.419L39.694,56.49L72.983,23L84,34.085L39.363,79z"></path></g></svg>
+      <textarea onkeypress="check_if_enter();" placeholder="Name" id="name_field" rows="1"></textarea>
+      <textarea onkeypress="check_if_enter();" placeholder="Email" id="email_field" rows="1"></textarea>
+    </div>
+    
+    <!-- Video Wrapper -->
+    <div class="outer-wrapper">
+      <div class="inner-wrapper" id="player-video"></div>
+        <h1 id="player-title"></h1>
+        <p id="player-descr"></p>
+      </div>
+      <div class="modal-overlay" style="display:none;">
+        <div class="modal-content" id="player-modal">
+          <!-- Questions populate here dynamically -->
+        </div>
+      </div>
+  </body>
+
+  <!-- External Scripts -->
+  <script src='./scripts/config.js'></script>
+
+  <!-- xAPI Scripts -->
+  <script src="./scripts/player/cryptojs_v3.1.2.js"></script>
+  <script src="./scripts/player/xapiwrapper.js"></script>
+  <script src="./scripts/player/xapi.js"></script>
+  
+  <script src="./scripts/player/jquery-3.2.1.min.js"></script>
+  <script src='./scripts/player/video.js'></script>
+  <script src='./scripts/player/videojs-markers.min.js'></script>
+  <script src='./scripts/player/player.js'></script>
+  <script src='./scripts/custom.js'></script>
+</html>
