@@ -56,6 +56,36 @@ interactive-video-player.zip
 
 ### Changing the Video
 
+You have two options for hosting your video:
+
+#### Option 1: Use a URL (Recommended)
+
+This option keeps your ZIP file small and allows you to update the video without re-uploading the entire package.
+
+1. Upload your video to a hosting service (Vimeo, YouTube, AWS S3, CDN, etc.)
+2. Get the direct video URL (must be an MP4 file URL, not an embed link)
+3. Update the `scripts/config.js` file:
+
+```javascript
+var _iv_config = {
+  title: "Your Video Title",
+  description: "Your video description",
+  source: 'https://your-domain.com/path-to-your-video.mp4',
+  poster_image_url: 'https://your-domain.com/path-to-poster.jpg',
+  // ... rest of configuration
+};
+```
+
+**Important Notes for URL Option:**
+- Use direct video file URLs (ending in .mp4, .webm, etc.)
+- Ensure your video hosting allows CORS (Cross-Origin Resource Sharing)
+- The video host must support HTTPS
+- YouTube/Vimeo embed links won't work - you need direct file URLs
+
+#### Option 2: Include Video in ZIP
+
+This option includes the video directly in your package but increases file size.
+
 1. Replace `assets/sample-vid.mp4` with your video file
 2. Update `assets/poster.png` with a screenshot from your video
 3. Update the `scripts/config.js` file:
@@ -111,14 +141,24 @@ This allows you to use Rise 360's **Continue Blocks** to prevent learners from p
 
 - **PDF Export**: Code blocks don't export well to PDF format
 - **Local Preview**: Code blocks published for LMS or web can't be previewed locally but will work when uploaded to your training host
-- **No External Requests**: The player cannot make external web requests (API calls, external fonts, etc.)
+- **External Resources**: While video and image URLs are supported by the HTML5 video player, other external API requests should be avoided. Google Fonts and similar external dependencies have been removed for compatibility.
 
 ## Troubleshooting
 
 ### Video Won't Load
+
+**For URL-hosted videos:**
+- Verify the URL is a direct link to an MP4 file (not a webpage or embed code)
+- Check that the video host supports CORS (Cross-Origin Resource Sharing)
+- Ensure the URL uses HTTPS (not HTTP)
+- Test the URL in a browser to confirm it's accessible
+- Check browser console for CORS or network errors
+
+**For locally-hosted videos:**
 - Ensure your video file is in MP4 format
-- Check that the path in `config.js` matches your video filename
-- Verify the video file is included in the ZIP
+- Check that the path in `config.js` matches your video filename exactly
+- Verify the video file is included in the ZIP at the correct path
+- Confirm the video is in the `assets/` folder
 
 ### Completion Not Tracking
 - Make sure you've enabled completion requirements in Rise 360
@@ -132,9 +172,11 @@ This allows you to use Rise 360's **Continue Blocks** to prevent learners from p
 ## File Size Considerations
 
 - Maximum ZIP file size: 5 GB
-- Optimize your video files for web delivery
-- Consider using compressed/optimized video formats
+- **Best Practice**: Use URL-hosted videos to keep your ZIP file small (typically < 5 MB)
+- If including video in ZIP, optimize video files for web delivery
+- Consider using compressed/optimized video formats (H.264 codec recommended)
 - Remove any unnecessary files before creating the ZIP
+- Large video files can be slow to upload and may cause issues with Rise 360
 
 ## Support
 
