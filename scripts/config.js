@@ -3,7 +3,7 @@ var _iv_config = {
   description:
     "This is a placeholder description for your training video. Replace this with your own content.",
   // Option 1: Use a URL to an externally hosted video (recommended for smaller ZIP files)
-  source : 'https://your-video-url.com/video.mp4',
+  source : 'https://articulateusercontent.com/rise/courses/DKyqJJHMztHe3Dzzi5p6VPd7hkLxZ22T/transcoded-r7VXbCH5HlvyRl7K-Into%2520of%2520New%2520construction%2520permit.mp4?v=1',
   // Option 2: Use a local video file from the assets folder
   // source : './assets/sample-vid.mp4',
   // Poster image can also be a URL or local file
