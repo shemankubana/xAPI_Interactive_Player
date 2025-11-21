@@ -85,6 +85,11 @@ $(document).ready(function() {
     $('.outer-wrapper').prepend(results_html);
     $(_iv_.video).slideUp();
     $('#results-screen').slideDown();
+
+    // Notify Rise 360 that the interaction is complete
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
   });
 
   setInterval(function(event) {
