@@ -1,13 +1,13 @@
 var _iv_config = {
-  title: "Using jQuery in Tumult Hype",
+  title: "Interactive Training Video",
   description:
-    "This is the description for the video. It can be as long as you want. It can contain <b>bold</b> or other HTML formatting tags.",
+    "This is a placeholder description for your training video. Replace this with your own content.",
   // Option 1: Use a URL to an externally hosted video (recommended for smaller ZIP files)
-  // source : 'https://your-domain.com/path-to-your-video.mp4',
+  source : 'https://your-video-url.com/video.mp4',
   // Option 2: Use a local video file from the assets folder
-  source : './assets/sample-vid.mp4',
+  // source : './assets/sample-vid.mp4',
   // Poster image can also be a URL or local file
-  poster_image_url : './assets/poster.png',
+  poster_image_url : 'https://your-cdn.com/poster-image.jpg',
   show_feedback_after_questions : true,
   show_feedback_on_markers : true,
   allow_question_review : true,
@@ -18,52 +18,45 @@ var _iv_config = {
   markers: [
     {
       index: 0,
-      time: 5,
+      time: 90,
       label: "Question 1",
-      main_text : "Where can you download jQuery?",
+      main_text : "Based on the content covered so far, what is the main topic of this section?",
       type : "multiple-choice",
       choices : [
       	{ 'label':'A',
-          'content':'facebook.com'},
+          'content':'Answer option A'},
       	{ 'label':'B',
-          'content':'jQuery.com'},
+          'content':'Answer option B'},
       	{ 'label':'C',
-          'content':'learningdojo.net'},
+          'content':'Answer option C'},
       	{ 'label':'D',
-          'content':'It can&rsquo;t be downloaded&mdash;it must seek you out'},
+          'content':'Answer option D'},
       ],
       correct : ['B'],
       feedback : {
         correct : {
           label : "That's Correct!",
-          details : "You correctly identified the answer from that video segment.",
-          continue_action : function(_iv_){
-            console.log('after continue correct');
-          }
+          details : "You correctly identified the answer from that video segment."
         },
         incorrect : {
           label : "Sorry, that's not correct.",
-          details : "You should review the video segment to identify the correct answer.",
-          continue_action : function(_iv_){
-            console.log('after continue incorrect');
-            navigateToTime(5); 
-          }
+          details : "You should review the video segment to identify the correct answer."
         }
       }
     },
     {
       index: 1,
-      time: 15,
-      label: "Information",
-      main_text : "Looking for additional information about jQuery?",
-      small_text : "Please visit <a href='https://www.jquery.com'>jQuery.com</a>",
+      time: 240,
+      label: "Additional Information",
+      main_text : "Need more information on this topic?",
+      small_text : "Visit our <a href='https://your-website.com/resources'>resource center</a> for additional materials.",
       type : "information",
     },
     {
       index: 2,
-      time: 19.5,
+      time: 390,
       label: "Question 2",
-      main_text : "You can download both the uncompressed or compressed version at jQuery.com <span class='instructions'>(true or false)</span>",
+      main_text : "The key concept explained in this segment is important for understanding the overall process. <span class='instructions'>(true or false)</span>",
       type : "multiple-choice",
       choices : [
       	{ 'label':'T',
@@ -85,19 +78,19 @@ var _iv_config = {
     },
     {
       index: 3,
-      time: 29.5,
+      time: 540,
       label: "Question 3",
-      main_text : "What is the version of jQuery highlighted in the video?",
+      main_text : "Which of the following best describes the procedure demonstrated in this section?",
       type : "multiple-choice",
       choices : [
       	{ 'label':'A',
-          'content':'3.1.0'},
+          'content':'First procedure option'},
       	{ 'label':'B',
-          'content':'3.1.1'},
+          'content':'Second procedure option'},
       	{ 'label':'C',
-          'content':'0.1'},
+          'content':'Third procedure option'},
       	{ 'label':'D',
-          'content':'25'},
+          'content':'Fourth procedure option'},
       ],
       correct : ['B'],
       feedback : {
@@ -113,17 +106,29 @@ var _iv_config = {
     },
     {
       index: 4,
-      time: 40,
+      time: 720,
+      label: "Key Takeaway",
+      main_text : "Remember this important point",
+      small_text : "This is a critical concept that will be referenced throughout the training. Make sure you understand it fully before continuing.",
+      type : "information",
+    },
+    {
+      index: 5,
+      time: 840,
       label: "Question 4",
-      main_text : "Tumult Hype is compatible with jQuery <span class='instructions'>(true or false)</span>",
+      main_text : "Based on everything covered in this video, which statement is most accurate?",
       type : "multiple-choice",
       choices : [
-      	{ 'label':'T',
-          'content':'True'},
-      	{ 'label':'F',
-          'content':'False'}
+      	{ 'label':'A',
+          'content':'Summary statement A'},
+      	{ 'label':'B',
+          'content':'Summary statement B'},
+      	{ 'label':'C',
+          'content':'Summary statement C'},
+      	{ 'label':'D',
+          'content':'Summary statement D'},
       ],
-      correct : ['T'],
+      correct : ['C'],
       feedback : {
         correct : {
           label : "That's Correct!",
