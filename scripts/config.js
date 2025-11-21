@@ -2,7 +2,11 @@ var _iv_config = {
   title: "Using jQuery in Tumult Hype",
   description:
     "This is the description for the video. It can be as long as you want. It can contain <b>bold</b> or other HTML formatting tags.",
+  // Option 1: Use a URL to an externally hosted video (recommended for smaller ZIP files)
+  // source : 'https://your-domain.com/path-to-your-video.mp4',
+  // Option 2: Use a local video file from the assets folder
   source : './assets/sample-vid.mp4',
+  // Poster image can also be a URL or local file
   poster_image_url : './assets/poster.png',
   show_feedback_after_questions : true,
   show_feedback_on_markers : true,
