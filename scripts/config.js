@@ -15,7 +15,7 @@ var _iv_config = {
   x_api_endpoint: "https://cloud.scorm.com/lrs/CJ0NK8AJKV/sandbox/",
   x_api_username: "4NWI_hcWLlmqyQAhSiE",
   x_api_password: "aVkZim3lxv8kt7NE2xo",
-  
+  video.controls = false;
   markers: [
     {
       index: 0,
