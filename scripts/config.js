@@ -15,6 +15,7 @@ var _iv_config = {
   x_api_endpoint: "https://cloud.scorm.com/lrs/CJ0NK8AJKV/sandbox/",
   x_api_username: "4NWI_hcWLlmqyQAhSiE",
   x_api_password: "aVkZim3lxv8kt7NE2xo",
+  
   markers: [
     {
       index: 0,
@@ -177,3 +178,36 @@ var _iv_config = {
     // }
  ]
 };
+
+let lastAllowedTime = 0;
+
+  function disableVideoSeeking() {
+    const video = document.querySelector("video");
+
+    if (!video) {
+      // Wait until video is available
+      setTimeout(disableVideoSeeking, 300);
+      return;
+    }
+
+    // Track natural playback
+    video.addEventListener("timeupdate", () => {
+      if (!video.seeking) {
+        lastAllowedTime = video.currentTime;
+      }
+    });
+
+    // Prevent manual seeking
+    video.addEventListener("seeking", () => {
+      if (video.currentTime > lastAllowedTime) {
+        video.currentTime = lastAllowedTime;
+      }
+    });
+
+    // Optional: disable controls UI
+    video.controls = true; // keep controls
+    video.controlsList = "nodownload noremoteplayback";
+  }
+
+  // Initialize seek prevention
+  document.addEventListener("DOMContentLoaded", disableVideoSeeking);
